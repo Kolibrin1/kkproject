@@ -23,7 +23,112 @@ a {
 li {
     list-style-type: none;
 }
+.vueh1{
+  text-align: center; font-size: 22px; margin-top: 15px; color: white; margin-bottom: 20px;
+}
+#app{
+  width: calc(25vw - 40px); height: 100%; margin-left: calc(7vw);
+}
+#errors{
+  color: white; margin-top: 0px; margin-bottom: 10px;
+}
+.ulvue{
+  color: rgb(71, 24, 128); margin-top: 0px;
+}
+.livue{
+  margin-bottom: 0px;
+}
+#messageError{
+  color: red; text-align: center;
+}
+#messageSuccess{
+  color: rgb(red, rgb(0, 157, 0), blue); text-align: center;
+}
+.p1vue{
+  margin-bottom: 10px; margin-top: 10px;
+}
+#vueName{
+  width: calc(25vw - 40px);
+  font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px;
+  line-height: 1.2; height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
 
+}
+
+#vueNum{
+  width: calc(25vw - 40px);
+      font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+      height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
+}
+#vueEmail{
+width: calc(25vw - 40px);
+    font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+    height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
+}
+
+#vueMessage{
+  width: calc(25vw - 40px);
+  font-size: 18px; padding: 15px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+  height: 150px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3); resize: none;
+}
+.div1vue{
+  display: flex; flex-direction: row; font-size: 13px;
+}
+.div2vue{
+  margin-right: 5px;
+}
+.div3vue{
+margin-bottom: 5px;
+}
+#vueCheckbox{
+  vertical-align: top; height: 20px;
+          width: 20px; font-size: 17px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+          background-color: rgba(89, 16, 142, 0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
+}
+.labelvue{
+  color: rgb(121, 135,146); width: 200px;
+}
+#sub{
+  background-color: rgb(5, 129, 18); color: white; width: 25vw;
+  height: 2vw;
+             font-size: 17px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; border: 1px solid rgba(256, 256, 256, 0.3);
+}
+#mmessageSuccess, #messageError{
+display: none;
+}
+
+
+#regBtn {
+z-index: 99; position: fixed;
+ bottom: 15px; right: 15px;
+  width: 200px; height: 50px;
+  font-size: 25px; border: solid 1px black; 
+   background: rgb(219, 104, 11); color: white; font-size: 20px;
+   border-radius: 12%;
+}
+.FormVue {
+display: flex;
+flex-direction: column;
+align-items: center;
+z-index: 100;
+position: fixed;
+width: 0;
+height: 0;
+background: rgba(0, 0, 0, 0.755);
+left: 110px;
+bottom: 45px;
+}
+#formavue {
+margin-top: 20px;
+opacity: 0;
+display: inline-block;
+position: absolute;
+z-index: 101;
+width: 40vw;
+height: 70vh;
+background: rgb(28, 30, 32);
+border:solid 1px rgb(38, 0, 255);
+border-radius: 15px;
+}
 
 /* .......ШАПКА САЙТА....... */
 
