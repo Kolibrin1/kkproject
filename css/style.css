@@ -978,6 +978,57 @@ li {
     border: 1px solid rgba(5, 12, 51, 0.2);
     margin: 20px auto;
 }
+/* КОМАНДА */
+
+.team {
+  width: 100%;
+  margin-top: 160px;
+}
+
+.team-title {
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 51px;
+  text-align: center;
+  color: #050C33;
+}
+
+.team-list {
+  width: 1080px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.team-list-item {
+  width: 280px;
+  margin-top: 80px;
+}
+
+.team-photo {
+  margin-bottom: 30px;
+}
+
+.team-photo img {
+  width: 280px;
+  height: 280px;
+}
+
+.team-txt-name {
+  color: #050C33;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.team-txt-position {
+  font-size: 16px;
+  line-height: 22px;
+  color: #050C33;
+  opacity: 0.7;
+}
+
 /* ОПТИМИЗАЦИЯ ДЛЯ СМАРТФОНОВ */
 
 @media screen and (max-width: 575px) {
@@ -1483,4 +1534,42 @@ li {
     color: #fff;
   }
     
+  /* КОМАНДА  для смартфонов*/
+    
+  .team {
+    padding: 0px 15px;
+  }
+
+  .team-title {
+    margin-bottom: 60px;
+    font-size: 25px;
+  }
+
+  .team-list .team-list-item {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    width: 155px;
+  }
+
+  .team-photo {
+    margin-bottom: 20px;
+  }
+
+  .team-photo img {
+    width: 155px;
+    height: 155px;
+  }
+
+  .team-employee .team-employee-name {
+    font-size: 14px;
+  }
+
+  .team-employee .team-employee-position {
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #050C33;
+    opacity: 0.7;
+  }
 }  
