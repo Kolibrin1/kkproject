@@ -14,6 +14,58 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <span class="FormVue">
+        <div id="formavue">
+            <h1 class ="vueh1">
+                Заполните форму</h1>
+            <form name="formavue" id="app" @submit="checkForm" action="https://formcarry.com/s/5qiaH_V0K"
+                method="POST" accept-charset="UTF-8">
+                <p id="errors" v-if="errors.length">
+                    <b id = "bvue">Пожалуйста исправьте указанные ошибки:</b>
+                <ul class = "ulvue">
+                    <li class = "livue" v-for="error in errors">{{ error }}</li>
+                </ul>
+                </p>
+                <p id="messageSuccess" >Ваше сообщение удачно отправлено!</p>
+                <p id="messageError" >Ваше сообщение не отправлено.
+                    Попробуйте ещё раз!</p>
+
+                <p class = "p1vue">
+                    <input id="vueName" type="text" name="name" v-model="name" placeholder="Ваше имя" maxlength="35">
+                </p>
+
+                <p class = "p1vue">
+                    <input id="vueNum" type="text" name="number" v-model="number" placeholder="Телефон"
+                        maxlength="15">
+                </p>
+
+                <p class = "p1vue">
+                    <input id="vueEmail" type="email" name="email" v-model="email" placeholder="E-mail">
+                </p>
+
+                <p class = "p1vue">
+                    <textarea id="vueMessage" name="message" v-model="message" placeholder="Ваш коментарий"></textarea>
+                </p>
+
+                <div class = "div1vue">
+                    <div class = "div2vue">
+                        <input id="vueCheckbox" type="checkbox" v-model="checkbox" name="checkbox">
+                    </div>
+                    <div class = "div3vue">
+                        <label class = "labelvue"> Отправляя заявку, я даю согласие на <a style = "color:red;">обработку своих персональных данных</a>.</label>
+                    </div>
+                </div>
+
+                <p style="text-align: center;">
+                    <input id="sub" type="submit" value="Отправить">
+                </p>
+            </form>
+        </div>
+
+    </span>
+
+    <button id="regBtn">Заполнить форму</button>
+
     <header class="header">
         <div class="header-container o-container">
             <div class="header-mmenu">
