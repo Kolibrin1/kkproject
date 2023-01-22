@@ -86,7 +86,123 @@ $(document).ready(function(){
             }
         }],
     });
-    
+    const app = new Vue({   
+        el: '#app',   
+        data: {   
+          errors: [],
+          name: null,
+          number: null,
+          email: null,
+          message: null,
+          checkbox: null
+        },
+        mounted() {      
+            if (localStorage.name) {
+              this.name = localStorage.name;
+            }
+            if(localStorage.number){
+                this.number=localStorage.number;
+            }
+            if(localStorage.email){
+                this.email=localStorage.email;
+            }
+            if(localStorage.message){
+                this.message=localStorage.message;
+            }
+          },
+        watch: {        
+            name(newName) {
+              localStorage.name = newName;
+            },
+            number(newNumber){
+                localStorage.number = newNumber;
+            },
+            email(newEmail){
+                localStorage.email = newEmail;
+            },
+            message(newMessage){
+                localStorage.message = newMessage;
+            }
+        },
+        methods: {   
+          checkForm: function (e) {  
+            $("#messageSuccess").css("display", "none");
+            $("#messageError").css("display", "none");
+            this.errors = [];
+      
+            if (!this.name) {  
+              this.errors.push('Требуется указать имя.');
+            }
+            if (!this.number) {
+              this.errors.push('Требуется указать номер.');
+            }
+            if (!this.email) {
+                this.errors.push('Требуется указать email.');
+            }
+            if (!this.message) {
+                this.errors.push('Требуется написать комменатарий.');
+            }
+            if (!this.checkbox) {
+                this.errors.push('Требуется согласие на обработку песрональных данных.');
+            }
+            if(this.errors.length>0){   
+                if(this.errors.length === 1){
+                    $("#formavue").css("height", "84vh");
+                    $("#formavue").css("top", "8vh");
+                }
+                else if(this.errors.length === 2){
+                    $("#formavue").css("height", "88vh");
+                    $("#formavue").css("top", "6vh");
+                }
+                else if(this.errors.length === 3){
+                    $("#formavue").css("height", "90vh");
+                    $("#formavue").css("top", "5vh");
+                }
+                else if(this.errors.length === 4){
+                    $("#formavue").css("height", "92vh");
+                    $("#formavue").css("top", "4vh");
+                }
+                else if(this.errors.length === 5){
+                    $("#formavue").css("height", "94vh");
+                    $("#formavue").css("top", "3vh");
+                }
+            }
+            if(this.errors.length === 0){
+                $("#formavue").css("height", "70vh");
+                $("#formavue").css("top", "15vh");
+            }
+            if (this.name && this.number && this.email  && this.message && this.checkbox) {  
+
+                changeBtn();
+                fetch('https://formcarry.com/s/q658vtPcl', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+                body: JSON.stringify({name: this.name, number: this.number, email: this.email, message: this.message})
+                })
+                .then(function(response){   
+                    console.log(response);
+                    $("#messageSuccess").css("display", "block");
+                    $("#formavue").css("height", "75vh");
+                    $("#formavue").css("top", "12vh");
+                    changeBtn();
+                })
+                .catch(function(error){    
+                    console.log(error);
+                    $("#messageError").css("display", "block");
+                    $("#formavue").css("height", "75vh");
+                    $("#formavue").css("top", "12vh");
+                    changeBtn();
+                })
+                this.name=""; 
+                this.number="";
+                this.email="";
+                this.message="";
+                this.checkbox=false;
+            } 
+            e.preventDefault();
+          }
+        }
+      });
 });
 document.addEventListener("DOMContentLoaded", function () {
 
