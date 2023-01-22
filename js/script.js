@@ -1,101 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-
-    $("#regBtn").click(function () {
-        openForm();
-        
-        animate({
-            duration: 700,
-            timing: function circ(timeFraction) {
-              return 0.3;
-            },
-            draw: function(progress) {
-              $(".FormVue").css("left", 110-progress*110+"px");
-              $(".FormVue").css("bottom", 45-progress*45+"px");
-              $(".FormVue").css("width",  progress * 100 + "%");
-              $(".FormVue").css("height",  progress * 100 + "%");
-              $("#formavue").css("opacity", progress);
-              $("#close_regBtn").css("opacity", progress);
-            }
-          });
-    });
-
-    $(".FormVue").click(function (event) {
-        
-        if((String)(event.target) === "[object HTMLSpanElement]") 
-        {
-            $("#messageSuccess").css("display", "none");
-            $("#messageError").css("display", "none");
-            openHome();
-            animate({
-                duration: 400,
-                timing: function circ(timeFraction) {
-                return 0.3;
-                },
-                draw: function(progress) {
-                $(".FormVue").css("left", progress*110+"px");
-                $(".FormVue").css("bottom", progress*45+"px");
-                $(".FormVue").css("width",  (1- progress) * 100 + "%");
-                $(".FormVue").css("height",  (1 - progress) * 100 + "%");
-                $("#formavue").css("opacity", 1-progress);
-                $("#close_regBtn").css("opacity", 1-progress);
-                }
-            });
-        }
-    });
-
-});
-
-
-function openForm() {    
-    history.pushState({page: 2}, "Form", "?form");
-    return false;
-}
-
-function openHome() {    
-    history.replaceState({page: 1}, "Home", "?home");
-    return false;
-}
-
-addEventListener("popstate", function () {
-    openHome();
-        $(".FormVue").hide(300);
-        $("#formavue").hide(300);
-}, false);
-
-function changeBtn() { 
-    if ($("#sub").css("opacity") != 0.2) {
-        $("#sub").css("pointer-events", "none");
-        $("#sub").css("opacity", "0.2"); 
-    } else { 
-        $("#sub").css("pointer-events", "unset");
-        $("#sub").css("opacity", "1"); 
-    }
-}
-
-function animate({timing, draw, duration}) {
-
-    let start = performance.now();
-  
-    requestAnimationFrame(function animate(time) {
-
-      let timeFraction = (time - start) / duration;
-      if (timeFraction > 1) timeFraction = 1;
-  
-      
-      let progress = timing(timeFraction);
-  
-      draw(progress); 
-  
-      if (timeFraction < 1) {
-        requestAnimationFrame(animate);
-      }
-  
-    });
-}
-
-
-
 $(document).ready(function(){
 
     //УВЕЛИЧЕНИЕ ТАРИФОВ ПРИ НАВЕДЕНИИ
@@ -184,4 +86,101 @@ $(document).ready(function(){
             }
         }],
     });
+    
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    $("#regBtn").click(function () {
+        openForm();
+        
+        animate({
+            duration: 700,
+            timing: function circ(timeFraction) {
+              return 1 - Math.sin(Math.acos(timeFraction));
+            },
+            draw: function(progress) {
+              $(".FormVue").css("left", 110-progress*110+"px");
+              $(".FormVue").css("bottom", 45-progress*45+"px");
+              $(".FormVue").css("width",  progress * 100 + "%");
+              $(".FormVue").css("height",  progress * 100 + "%");
+              $("#formavue").css("opacity", progress);
+              $("#close_regBtn").css("opacity", progress);
+            }
+          });
+    });
+
+    $(".FormVue").click(function (event) {
+        
+        if((String)(event.target) === "[object HTMLSpanElement]") 
+        {
+            $("#messageSuccess").css("display", "none");
+            $("#messageError").css("display", "none");
+            openHome();
+            animate({
+                duration: 400,
+                timing: function circ(timeFraction) {
+                return 1 - Math.sin(Math.acos(timeFraction));
+                },
+                draw: function(progress) {
+                $(".FormVue").css("left", progress*110+"px");
+                $(".FormVue").css("bottom", progress*45+"px");
+                $(".FormVue").css("width",  (1- progress) * 100 + "%");
+                $(".FormVue").css("height",  (1 - progress) * 100 + "%");
+                $("#formavue").css("opacity", 1-progress);
+                $("#close_regBtn").css("opacity", 1-progress);
+                }
+            });
+        }
+    });
+
+});
+
+
+function openForm() {    
+    history.pushState({page: 2}, "Form", "?form");
+    return false;
+}
+
+function openHome() {    
+    history.replaceState({page: 1}, "Home", "?home");
+    return false;
+}
+
+addEventListener("popstate", function () {
+    openHome();
+        $(".FormVue").hide(300);
+        $("#formavue").hide(300);
+}, false);
+
+function changeBtn() { 
+    if ($("#sub").css("opacity") != 0.2) {
+        $("#sub").css("pointer-events", "none");
+        $("#sub").css("opacity", "0.2"); 
+    } else { 
+        $("#sub").css("pointer-events", "unset");
+        $("#sub").css("opacity", "1"); 
+    }
+}
+
+function animate({timing, draw, duration}) {
+
+    let start = performance.now();
+  
+    requestAnimationFrame(function animate(time) {
+
+      let timeFraction = (time - start) / duration;
+      if (timeFraction > 1) timeFraction = 1;
+  
+      
+      let progress = timing(timeFraction);
+  
+      draw(progress); 
+  
+      if (timeFraction < 1) {
+        requestAnimationFrame(animate);
+      }
+  
+    });
+}
+
