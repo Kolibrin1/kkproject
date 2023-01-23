@@ -174,7 +174,7 @@ $(document).ready(function(){
             if (this.name && this.number && this.email  && this.message && this.checkbox) {  
 
                 changeBtn();
-                fetch('https://formcarry.com/s/q658vtPcl', {
+                fetch('https://formcarry.com/s/5qiaH_V0K', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
                 body: JSON.stringify({name: this.name, number: this.number, email: this.email, message: this.message})
