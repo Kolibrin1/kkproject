@@ -158,8 +158,8 @@ display: none;
 #regBtn {
 z-index: 99; 
 position: fixed;
- bottom: 15px; 
- right: 15px;
+ top: 30px; 
+ left: 15px;
 width: 200px; 
 height: 50px;
   font-size: 25px; 
@@ -190,6 +190,38 @@ width: 40vw;
 height: 70vh;
 background: rgb(28, 30, 32);
 border-radius: 15px;
+}
+@media screen and (max-width:575px) {
+  #formavue {
+margin-top: 20px;
+opacity: 0;
+display: inline-block;
+position: absolute;
+z-index: 101;
+width: 300px;
+height: 650px;
+background: rgb(28, 30, 32);
+border-radius: 15px;
+}
+#sub{
+  width: 200px;
+  height: 50px;
+}
+#vueName{
+  width:200px;
+}
+#vueNum{
+  width: 200px;
+}
+#vueEmail{
+  width: 200px;
+}
+#vueMessage{
+  width: 200px;
+}
+#vueCheckbox{
+  padding: 10px 10px 10px 10px;
+}
 }
 
 /* .......ШАПКА САЙТА....... */
