@@ -23,6 +23,9 @@ a {
 li {
     list-style-type: none;
 }
+::placeholder{
+  color: white;
+}
 .vueh1{
   text-align: center; font-size: 22px; margin-top: 15px; color: white; margin-bottom: 20px;
 }
@@ -50,25 +53,25 @@ li {
 }
 #vueName{
   width: calc(25vw - 40px);
-  font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px;
+  font-size: 13px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px;
   line-height: 1.2; height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
 
 }
 
 #vueNum{
   width: calc(25vw - 40px);
-      font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+      font-size: 13px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
       height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
 }
 #vueEmail{
 width: calc(25vw - 40px);
-    font-size: 17px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+    font-size: 13px; padding: 5px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
     height: 36px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
 }
 
 #vueMessage{
   width: calc(25vw - 40px);
-  font-size: 18px; padding: 15px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
+  font-size: 15px; padding: 15px 20px; margin-bottom: 7px; border: 1px solid rgba(256, 256, 256, 0.3); border-radius: 5px; line-height: 1.2;
   height: 150px; background-color: rgb(121, 135,146,0); color: white; border: 1px solid rgba(256, 256, 256, 0.3); resize: none;
 }
 .div1vue{
@@ -86,7 +89,7 @@ margin-bottom: 5px;
           background-color: rgba(89, 16, 142, 0); color: white; border: 1px solid rgba(256, 256, 256, 0.3);
 }
 .labelvue{
-  color: rgb(121, 135,146); width: 200px;
+  color: white; width: 200px;
 }
 #sub{
   background-color: rgb(5, 129, 18); color: white; width: 25vw;
@@ -126,8 +129,7 @@ position: absolute;
 z-index: 101;
 width: 40vw;
 height: 70vh;
-background: rgb(51,51,51);
-border:solid 1px rgb(136, 230, 13);
+background: rgb(28, 30, 32);
 border-radius: 15px;
 }
 
