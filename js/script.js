@@ -54,7 +54,7 @@ $(document).ready(function(){
         autoplaySpeed:2400,
         speed:1400,
         responsive:[{
-            breakpoint:480,
+            breakpoint:575,
             settings:{
                 slidesToScroll:1,
                 slidesToShow:2,
@@ -76,7 +76,7 @@ $(document).ready(function(){
         autoplaySpeed: 2500,
         speed: 1800,
         responsive: [{
-            breakpoint: 480,
+            breakpoint: 575,
             settings: {
                 slidesToScroll: 1,
                 slidesToShow: 3,
